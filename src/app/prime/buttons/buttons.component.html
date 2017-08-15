@@ -1,0 +1,25 @@
+
+<div class="animated fadeIn">
+  
+  <div class="card" id="button1">
+    <div class="card-header">Button click
+      <span class="badge badge-pill badge-danger float-right">{{clicks}}</span>
+    </div>
+    <div class="card-block">
+
+          <button pButton type="button" (click)="countup()" label="Click up"></button>
+          <button pButton type="button" (click)="countdown()" label="Click down"></button>
+    </div>
+  </div>
+    <div class="card" id="button2">
+     
+    <div class="card-header">Button click Message
+    </div>
+    <div class="card-block">
+          <p-messages [(value)]="msgs"></p-messages>
+          <button pButton type="button" (click)="pling()" label="Normal message"></button>
+          no growl yet
+  
+    </div>
+  </div>
+  </div>

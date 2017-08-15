@@ -1,0 +1,23 @@
+<div class="animated fadeIn">
+
+  <div class="card" id="button1">
+    <div class="card-header">Button click
+      <span class="badge badge-pill badge-danger float-right">{{clicks}}</span>
+    </div>
+    <div class="card-block">
+      <div>
+        <inline-editor type="text" [(ngModel)]="editableText" (onSave)="saveEditable($event)" name="editableText1" size="8"></inline-editor>
+      </div>
+      <div>
+        <inline-editor type="password" [(ngModel)]="editablePassword" (onSave)="saveEditable($event)"></inline-editor>
+      </div>
+      <div>
+        <inline-editor type="textarea" [(ngModel)]="editableTextArea" (onSave)="saveEditable($event)"> </inline-editor>
+      </div>
+      <div>
+        <inline-editor type="select" [(ngModel)]="editableSelect" (onSave)="saveEditable($event)" [options]="editableSelectOptions"
+          value="valor"></inline-editor>
+      </div>
+    </div>
+  </div>
+</div>
