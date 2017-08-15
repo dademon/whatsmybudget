@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ButtonsComponent } from './buttons/buttons.component';
-
+import {DatatableComponent} from './datatable/datatable.component'
 
 const routes: Routes = [
   {

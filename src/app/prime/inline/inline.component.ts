@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
+import {Http, Response} from '@angular/http';
 
 @Component({
   selector: 'app-inline',
@@ -9,23 +10,12 @@ export class InlineComponent implements OnInit {
 
   title = 'My component!';
 
-  editableText = 'myText';
-  editablePassword = 'myPassword';
-  editableTextArea = 'Text in text area';
-  editableSelect = 2;
-  editableSelectOptions =[
-    {value: 1, text: 'status1'},
-    {value: 2, text: 'status2'},
-    {value: 3, text: 'status3'},
-    {value: 4, text: 'status4'}
-  ];
-
-  saveEditable(value) {
-    //call to http service
-    console.log('http.service: ' + value);
-  }
-
-  constructor() { }
+  posts;
+  
+    constructor(private http:Http) {
+        this.http.get('http://jsonplaceholder.typicode.com/posts/')
+                .subscribe(res => this.posts = res.json());
+    }
 
   ngOnInit() {
   }
